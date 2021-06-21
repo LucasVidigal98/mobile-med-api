@@ -60,14 +60,6 @@ routes.get('/get_pdf', async (req, res) => {
     return res.send(pdf);
 });
 
-routes.get('/img', (req, res) => {
-    const imageName = req.query.image;
-    console.log(imageName);
-    const image = fs.readFileSync(path.resolve(__dirname, 'assets', 'icons', 'capsule', `${imageName}.png`));
-    //res.contentType('application/png');
-    res.send(image.toString());
-});
-
 app.use('/uploads', express.static(path.resolve(__dirname, 'assets', 'icons')));
 app.listen(3333);
 
