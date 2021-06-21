@@ -59,6 +59,10 @@ routes.get('/get_pdf', async (req, res) => {
     return res.send(pdf);
 });
 
+routes.get('/teste', async(req, res) => {
+    res.json({title: 'Teste'});
+})
+
 app.use('/uploads', express.static(path.resolve(__dirname, 'assets', 'icons')));
 app.listen(process.env.PORT || 3333);
 
