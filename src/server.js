@@ -35,7 +35,6 @@ routes.get('/', (req, res) => {
 
 routes.get('/get_pdf', async (req, res) => {
     const id = req.query.id;
-    console.log(id);
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
     await page.goto(`http://localhost:3333/?id=${id}`, {
