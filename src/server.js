@@ -37,7 +37,7 @@ routes.get('/get_pdf', async (req, res) => {
     const id = req.query.id;
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
-    await page.goto(`mobile-med-api.herokuapp.com:${process.env.PORT || 3333}/?id=${id}`, {
+    await page.goto(`mobile-med-api.herokuapp.com/?id=${id}`, {
         waitUntil: 'networkidle0'
     });
 
