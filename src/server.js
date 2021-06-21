@@ -60,7 +60,7 @@ routes.get('/get_pdf', async (req, res) => {
 });
 
 app.use('/uploads', express.static(path.resolve(__dirname, 'assets', 'icons')));
-app.listen(3333);
+app.listen(process.env.PORT || 3333);
 
 
 /*ejs.renderFile('./template.ejs', {record}, (err, html) => {
