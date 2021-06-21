@@ -1,0 +1,15 @@
+Capsule: https://www.flaticon.com/svg/vstatic/svg/1617/1617465.svg?token=exp=1615079937~hmac=43c521b5b3bb63c5b159a124416f3b0f
+Breakfast: https://www.flaticon.com/svg/vstatic/svg/887/887322.svg?token=exp=1615080079~hmac=38011b4d6f9b00205a396923903041ec
+Crem: https://www.flaticon.com/svg/vstatic/svg/1209/1209402.svg?token=exp=1615080131~hmac=8de9aa3edcfe50bdebf5a1f1a496ecb8
+dinner-lunch: https://www.flaticon.com/svg/vstatic/svg/857/857681.svg?token=exp=1615080296~hmac=21aa22f8d42057c06950fd8f94912599
+exercice: https://www.flaticon.com/svg/vstatic/svg/857/857685.svg?token=exp=1615080349~hmac=fa1ab5477afbfcc684ac0508b3767945
+jejum: https://www.flaticon.com/svg/vstatic/svg/3858/3858794.svg?token=exp=1615080389~hmac=f6ca31dae1e3ffaab7ec88ed7c0b9224
+medicine: https://www.flaticon.com/br/premium-icon/icons/svg/1772/1772780.svg
+pill_1: https://www.flaticon.com/br/premium-icon/icons/svg/1268/1268681.svg
+pills: https://www.flaticon.com/premium-icon/icons/svg/716/716654.svg
+rest: https://www.flaticon.com/svg/vstatic/svg/2972/2972344.svg?token=exp=1615080839~hmac=bebf2a2241407f786367654454a3d014
+shower: https://www.flaticon.com/svg/vstatic/svg/3043/3043939.svg?token=exp=1615080866~hmac=6b71a028d7510faf626b917b66bb67e8
+spray: https://www.flaticon.com/svg/vstatic/svg/2971/2971984.svg?token=exp=1615080904~hmac=9f6fcb80d4a84c73f3b99866d5016caa
+supossitory: https://www.flaticon.com/svg/vstatic/svg/2932/2932640.svg?token=exp=1615080945~hmac=c1556ba64991ef3740aabc016ebfad77
+syringe: https://www.flaticon.com/svg/vstatic/svg/407/407543.svg?token=exp=1615080980~hmac=21813b2256da608439d177a04bcbc557
+toilet: https://www.flaticon.com/svg/vstatic/svg/456/456446.svg?token=exp=1615081030~hmac=cef29d9008fd1fb132cdad9ce79eecde
