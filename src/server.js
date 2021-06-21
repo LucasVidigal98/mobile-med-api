@@ -35,7 +35,13 @@ routes.get('/', (req, res) => {
 
 routes.get('/get_pdf', async (req, res) => {
     const id = req.query.id;
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({
+        'args' : [
+            '--no-sandbox',
+            '--disable-setuid-sandbox'
+        ]
+    });
+    
     const page = await browser.newPage();
     await page.goto(`mobile-med-api.herokuapp.com/?id=${id}`, {
         waitUntil: 'networkidle0'
