@@ -16,11 +16,10 @@ routes.post('/pdf', (req, res) => {
 
     const data = req.body;
     const record = JSON.parse(data.json);
-    console.log(record.id);
     
     ejs.renderFile('./template.ejs', {record}, (err, html) => {
         //console.log(html);
-        fs.writeFileSync(`${record.id}.html`, html);
+        fs.writeFileSync(path.resolve(__dirname, 'html', `${record.id}.html`), html);
     });
 
     res.json({id: record.id});
@@ -29,7 +28,7 @@ routes.post('/pdf', (req, res) => {
 routes.get('/', (req, res) => {
 
     const id = req.query.id;
-    const html = fs.readFileSync(`${id}.html`);
+    const html = fs.readFileSync(path.resolve(__dirname, 'html', `${id}.html`));
 
     res.send(html.toString());
 });
