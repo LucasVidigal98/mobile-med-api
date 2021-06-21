@@ -41,9 +41,9 @@ routes.get('/get_pdf', async (req, res) => {
             '--disable-setuid-sandbox'
         ]
     });
-    
+
     const page = await browser.newPage();
-    await page.goto(`mobile-med-api.herokuapp.com/?id=${id}`, {
+    await page.goto(`www.google.com`, {
         waitUntil: 'networkidle0'
     });
 
