@@ -37,7 +37,7 @@ routes.get('/get_pdf', async (req, res) => {
     const id = req.query.id;
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
-    await page.goto(`http://localhost:3333/?id=${id}`, {
+    await page.goto(`mobile-med-api.herokuapp.com:${process.env.PORT || 3333}/?id=${id}`, {
         waitUntil: 'networkidle0'
     });
 
@@ -59,13 +59,8 @@ routes.get('/get_pdf', async (req, res) => {
     return res.send(pdf);
 });
 
-routes.get('/teste', async(req, res) => {
-    res.json({title: 'Teste'});
-})
-
 app.use('/uploads', express.static(path.resolve(__dirname, 'assets', 'icons')));
 app.listen(process.env.PORT || 3333);
-
 
 /*ejs.renderFile('./template.ejs', {record}, (err, html) => {
     console.log(html);
