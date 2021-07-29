@@ -17,7 +17,7 @@ routes.post('/pdf', (req, res) => {
     const data = req.body;
     const record = JSON.parse(data.json);
     
-    ejs.renderFile('./template.ejs', {record}, (err, html) => {
+    ejs.renderFile(path.resolve(__dirname, 'template.ejs'), {record}, (err, html) => {
         //console.log(html);
         fs.writeFileSync(path.resolve(__dirname, 'html', `${record.id}.html`), html);
     });
