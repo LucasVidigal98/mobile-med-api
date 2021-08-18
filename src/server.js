@@ -2,7 +2,6 @@ const ejs = require('ejs');
 const fs = require('fs');
 const express = require('express');
 const cors = require('cors');
-const { json } = require('express');
 const puppeteer = require('puppeteer');
 const path = require('path');
 
@@ -19,7 +18,6 @@ routes.post('/pdf', (req, res) => {
     const all = data.all;
     
     ejs.renderFile(path.resolve(__dirname, 'template.ejs'), {record, all}, (err, html) => {
-        //console.log(html);
         fs.writeFileSync(path.resolve(__dirname, 'html', `${record.id}.html`), html);
     });
 
@@ -44,6 +42,7 @@ routes.get('/get_pdf', async (req, res) => {
     });
     
     const page = await browser.newPage();
+    //https://mobile-med-api.herokuapp.com
     await page.goto(`https://mobile-med-api.herokuapp.com/?id=${id}`, {
         waitUntil: 'networkidle0'
     });
@@ -69,8 +68,3 @@ routes.get('/get_pdf', async (req, res) => {
 
 app.use('/uploads', express.static(path.resolve(__dirname, 'assets', 'icons')));
 app.listen(process.env.PORT || 3333);
-
-/*ejs.renderFile('./template.ejs', {record}, (err, html) => {
-    console.log(html);
-    fs.writeFileSync('index.html', html);
-});*/
