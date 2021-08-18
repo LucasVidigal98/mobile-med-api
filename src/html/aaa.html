@@ -15,6 +15,11 @@
     <style>
         body {
             font-family: 'Ubuntu', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            transform: rotate(90deg);
         }
 
         .logo {
@@ -53,10 +58,6 @@
             max-width: 500px;
         }
 
-        table {
-            min-width: 100px;
-        }
-
         table thead th {
             border: 1px solid #48D1CC;
         }
@@ -73,6 +74,7 @@
         }
 
         .table-day {
+            padding: 25px;
             display: flex;
             align-items: center;
             flex-direction: column;
@@ -123,33 +125,31 @@
 <body>
 
     <div class="logo">
-        <img src="https://mobile-med-api.herokuapp.com/uploads/adaptive-icon.png" alt="logo">
+        <img src="http://localhost:3333/uploads/adaptive-icon.png" alt="logo">
         <h1>Mediquei</h1>
     </div>
 
-    <div style="display: flex; align-items: center; justify-content: center;">
-        <header>
-            <div>
-                <p>Paciente: <%= record.pacient.name %>
-                </p>
-                <p>Idade: <%= record.pacient.age %>
-                </p>
-                <p>Estado Cvil: <%= record.pacient.matrialStatusToString %>
-                </p>
-            </div>
+    <header>
+        <div>
+            <p>Paciente: Lucas de Freitas
+            </p>
+            <p>Idade: 25
+            </p>
+            <p>Estado Cvil: 
+            </p>
+        </div>
 
-            <div>
-                <p>Profissão: <%= record.pacient.career %>
-                </p>
-                <p>Genêro: <%= record.pacient.genreToString %>
-                </p>
-                <p>Naturalidade: <%= record.pacient.fromTo %>
-                </p>
-                <p>Escolaridade: <%= record.pacient.degree %>
-                </p>
-            </div>
-        </header>
-    </div>
+        <div>
+            <p>Profissão: 
+            </p>
+            <p>Genêro: 
+            </p>
+            <p>Naturalidade: 
+            </p>
+            <p>Escolaridade: 
+            </p>
+        </div>
+    </header>
 
     <main>
         <div class="table-day">
@@ -196,49 +196,144 @@
 
                 <tbody>
                     <tr>
-                        <% record.days.all.forEach(item=> { %>
+                        
                             <td>
-                                <% if(item.active) { %>
-                                    <% if(item.medicine !=='' ) { %>
+                                
+                                    
                                         <p class="name-med">
-                                            <%= item.medicine %>
+                                            Novalgina
                                         </p>
                                         <div class="medicine">
                                             <span>
-                                                <%= item.amount %>x
+                                                2x
                                             </span>
-                                            <img src="<%= item.imgMed %>" alt="Remédio" class="img-medicine">
+                                            <img src="https://www.flaticon.com/premium-icon/icons/svg/716/716654.svg" alt="Remédio" class="img-medicine">
                                             <span>
-                                                <%= item.amount_dose %>
+                                                20
                                             </span>
                                             <span>
-                                                <%= item.dose %>
+                                                ml
                                             </span>
                                         </div>
                                         <p class="poso">
-                                            <%= item.dosage %>
+                                            8/8h
                                         </p>
-                                        <% } %>
-                                            <% if(item.routine !=='' ) { %>
+                                        
+                                            
+                                                    
+                            </td>
+                            
+                            <td>
+                                
+                                    
+                                            
                                                 <div class="routine">
                                                     <p>
-                                                        <%= item.routine %>
+                                                        Café
                                                     </p>
-                                                    <img src="<%= item.imgRou %>" class="img-routine" alt="Rotina">
+                                                    <img src="https://www.flaticon.com/br/premium-icon/icons/svg/3086/3086646.svg" class="img-routine" alt="Rotina">
                                                     <p>
-                                                        <%= item.observation %>
+                                                        Tomar Café
                                                     </p>
                                                 </div>
-                                                <% } %>
-                                                    <% } %>
+                                                
+                                                    
                             </td>
-                            <% }) %>
+                            
+                            <td>
+                                
+                            </td>
+                            
+                            <td>
+                                
+                            </td>
+                            
+                            <td>
+                                
+                            </td>
+                            
+                            <td>
+                                
+                            </td>
+                            
+                            <td>
+                                
+                            </td>
+                            
+                            <td>
+                                
+                            </td>
+                            
+                            <td>
+                                
+                            </td>
+                            
+                            <td>
+                                
+                            </td>
+                            
+                            <td>
+                                
+                            </td>
+                            
+                            <td>
+                                
+                            </td>
+                            
+                            <td>
+                                
+                            </td>
+                            
+                            <td>
+                                
+                            </td>
+                            
+                            <td>
+                                
+                            </td>
+                            
+                            <td>
+                                
+                            </td>
+                            
+                            <td>
+                                
+                            </td>
+                            
+                            <td>
+                                
+                            </td>
+                            
+                            <td>
+                                
+                            </td>
+                            
+                            <td>
+                                
+                            </td>
+                            
+                            <td>
+                                
+                            </td>
+                            
+                            <td>
+                                
+                            </td>
+                            
+                            <td>
+                                
+                            </td>
+                            
+                            <td>
+                                
+                            </td>
+                            
                     </tr>
                 </tbody>
             </table>
         </div>
 
-        <% if(!all) { %>
+        
             <div class="table-day">
                 <h3>Segunda-Feira</h3>
                 <table>
@@ -283,43 +378,138 @@
 
                     <tbody>
                         <tr>
-                            <% record.days.sunday.forEach(item=> { %>
+                            
                                 <td>
-                                    <% if(item.active) { %>
-                                        <% if(item.medicine !=='' ) { %>
+                                    
+                                        
                                             <p class="name-med">
-                                                <%= item.medicine %>
+                                                Novalgina
                                             </p>
                                             <div class="medicine">
                                                 <span>
-                                                    <%= item.amount %>x
+                                                    2x
                                                 </span>
-                                                <img src="<%= item.imgMed %>" alt="Remédio" class="img-medicine">
+                                                <img src="https://www.flaticon.com/premium-icon/icons/svg/716/716654.svg" alt="Remédio" class="img-medicine">
                                                 <span>
-                                                    <%= item.amount_dose %>
+                                                    20
                                                 </span>
                                                 <span>
-                                                    <%= item.dose %>
+                                                    ml
                                                 </span>
                                             </div>
                                             <p class="poso">
-                                                <%= item.dosage %>
+                                                8/8h
                                             </p>
-                                            <% } %>
-                                                <% if(item.routine !=='' ) { %>
+                                            
+                                                
+                                                        
+                                </td>
+                                
+                                <td>
+                                    
+                                        
+                                                
                                                     <div class="routine">
                                                         <p>
-                                                            <%= item.routine %>
+                                                            Café
                                                         </p>
-                                                        <img src="<%= item.imgRou %>" class="img-routine" alt="Rotina">
+                                                        <img src="https://www.flaticon.com/br/premium-icon/icons/svg/3086/3086646.svg" class="img-routine" alt="Rotina">
                                                         <p>
-                                                            <%= item.observation %>
+                                                            Tomar Café
                                                         </p>
                                                     </div>
-                                                    <% } %>
-                                                        <% } %>
+                                                    
+                                                        
                                 </td>
-                                <% }) %>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
                         </tr>
                     </tbody>
                 </table>
@@ -370,129 +560,138 @@
 
                     <tbody>
                         <tr>
-                            <% record.days.tuesday.forEach(item=> { %>
+                            
                                 <td>
-                                    <% if(item.active) { %>
-                                        <% if(item.medicine !=='' ) { %>
+                                    
+                                        
                                             <p class="name-med">
-                                                <%= item.medicine %>
+                                                Novalgina
                                             </p>
                                             <div class="medicine">
                                                 <span>
-                                                    <%= item.amount %>x
+                                                    2x
                                                 </span>
-                                                <img src="<%= item.imgMed %>" alt="Remédio" class="img-medicine">
+                                                <img src="https://www.flaticon.com/premium-icon/icons/svg/716/716654.svg" alt="Remédio" class="img-medicine">
                                                 <span>
-                                                    <%= item.amount_dose %>
+                                                    20
                                                 </span>
                                                 <span>
-                                                    <%= item.dose %>
+                                                    ml
                                                 </span>
                                             </div>
                                             <p class="poso">
-                                                <%= item.dosage %>
+                                                8/8h
                                             </p>
-                                            <% } %>
-                                                <% if(item.routine !=='' ) { %>
-                                                    <div class="routine">
-                                                        <p>
-                                                            <%= item.routine %>
-                                                        </p>
-                                                        <img src="<%= item.imgRou %>" class="img-routine" alt="Rotina">
-                                                        <p>
-                                                            <%= item.observation %>
-                                                        </p>
-                                                    </div>
-                                                    <% } %>
-                                                        <% } %>
+                                            
+                                                
+                                                        
                                 </td>
-                                <% }) %>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="table-day">
-                <h3>Quarta-Feira</h3>
-                <table>
-                    <thead>
-                        <th>00h <img src="https://image.flaticon.com/icons/png/512/209/209714.png" /></th>
-                        <th>01h <img src="https://image.flaticon.com/icons/png/512/209/209714.png" /></th>
-                        <th>02h <img src="https://image.flaticon.com/icons/png/512/209/209714.png" /></th>
-                        <th>03h <img src="https://image.flaticon.com/icons/png/512/209/209714.png" /></th>
-                        <th>04h <img src="https://image.flaticon.com/icons/png/512/209/209714.png" /></th>
-                        <th>05h <img src="https://image.flaticon.com/icons/png/512/209/209714.png" /></th>
-                        <th>06h <img src="https://image.flaticon.com/icons/png/512/1007/1007072.png" /></th>
-                        <th>07h <img src="https://image.flaticon.com/icons/png/512/1007/1007072.png" /></th>
-                        <th>08h <img src="https://image.flaticon.com/icons/png/512/1007/1007072.png" /></th>
-                        <th>09h <img src="https://image.flaticon.com/icons/png/512/1007/1007072.png" /></th>
-                        <th>10h <img src="https://image.flaticon.com/icons/png/512/1007/1007072.png" /></th>
-                        <th>11h <img src="https://image.flaticon.com/icons/png/512/1007/1007072.png" /></th>
-                        <th>12h <img
-                                src="https://as1.ftcdn.net/v2/jpg/03/05/65/60/500_F_305656020_K8JZIwNucr3QRTSn9jcZ4tz6Axjr8vzJ.jpg" />
-                        </th>
-                        <th>13h <img
-                                src="https://as1.ftcdn.net/v2/jpg/03/05/65/60/500_F_305656020_K8JZIwNucr3QRTSn9jcZ4tz6Axjr8vzJ.jpg" />
-                        </th>
-                        <th>14h <img
-                                src="https://as1.ftcdn.net/v2/jpg/03/05/65/60/500_F_305656020_K8JZIwNucr3QRTSn9jcZ4tz6Axjr8vzJ.jpg" />
-                        </th>
-                        <th>15h <img
-                                src="https://as1.ftcdn.net/v2/jpg/03/05/65/60/500_F_305656020_K8JZIwNucr3QRTSn9jcZ4tz6Axjr8vzJ.jpg" />
-                        </th>
-                        <th>16h <img
-                                src="https://as1.ftcdn.net/v2/jpg/03/05/65/60/500_F_305656020_K8JZIwNucr3QRTSn9jcZ4tz6Axjr8vzJ.jpg" />
-                        </th>
-                        <th>17h <img
-                                src="https://as1.ftcdn.net/v2/jpg/03/05/65/60/500_F_305656020_K8JZIwNucr3QRTSn9jcZ4tz6Axjr8vzJ.jpg" />
-                        </th>
-                        <th>18h <img src="https://image.flaticon.com/icons/png/512/209/209714.png" /></th>
-                        <th>19h <img src="https://image.flaticon.com/icons/png/512/209/209714.png" /></th>
-                        <th>20h <img src="https://image.flaticon.com/icons/png/512/209/209714.png" /></th>
-                        <th>21h <img src="https://image.flaticon.com/icons/png/512/209/209714.png" /></th>
-                        <th>22h <img src="https://image.flaticon.com/icons/png/512/209/209714.png" /></th>
-                        <th>23h <img src="https://image.flaticon.com/icons/png/512/209/209714.png" /></th>
-                    </thead>
-    
-                    <tbody>
-                        <tr>
-                            <% record.days.wednesday.forEach(item=> { %>
+                                
                                 <td>
-                                    <% if(item.active) { %>
-                                        <% if(item.medicine !=='' ) { %>
-                                            <p class="name-med">
-                                                <%= item.medicine %>
-                                            </p>
-                                            <div class="medicine">
-                                                <span>
-                                                    <%= item.amount %>x
-                                                </span>
-                                                <img src="<%= item.imgMed %>" alt="Remédio" class="img-medicine">
-                                                <span>
-                                                    <%= item.amount_dose %>
-                                                </span>
-                                                <span>
-                                                    <%= item.dose %>
-                                                </span>
-                                            </div>
-                                            <p class="poso">
-                                                <%= item.dosage %>
-                                            </p>
-                                            <% } %>
-                                                <% if(item.routine !=='' ) { %>
+                                    
+                                        
+                                                
                                                     <div class="routine">
                                                         <p>
-                                                            <%= item.routine %>
+                                                            Café
                                                         </p>
-                                                        <img src="<%= item.imgRou %>" class="img-routine" alt="Rotina">
+                                                        <img src="https://www.flaticon.com/br/premium-icon/icons/svg/3086/3086646.svg" class="img-routine" alt="Rotina">
                                                         <p>
-                                                            <%= item.observation %>
+                                                            Tomar Café
                                                         </p>
                                                     </div>
-                                                    <% } %>
-                                                        <% } %>
+                                                    
+                                                        
                                 </td>
-                                <% }) %>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
                         </tr>
                     </tbody>
                 </table>
@@ -539,46 +738,141 @@
                         <th>22h <img src="https://image.flaticon.com/icons/png/512/209/209714.png" /></th>
                         <th>23h <img src="https://image.flaticon.com/icons/png/512/209/209714.png" /></th>
                     </thead>
-    
+
                     <tbody>
                         <tr>
-                            <% record.days.thursday.forEach(item=> { %>
+                            
                                 <td>
-                                    <% if(item.active) { %>
-                                        <% if(item.medicine !=='' ) { %>
+                                    
+                                        
                                             <p class="name-med">
-                                                <%= item.medicine %>
+                                                Novalgina
                                             </p>
                                             <div class="medicine">
                                                 <span>
-                                                    <%= item.amount %>x
+                                                    2x
                                                 </span>
-                                                <img src="<%= item.imgMed %>" alt="Remédio" class="img-medicine">
+                                                <img src="https://www.flaticon.com/premium-icon/icons/svg/716/716654.svg" alt="Remédio" class="img-medicine">
                                                 <span>
-                                                    <%= item.amount_dose %>
+                                                    20
                                                 </span>
                                                 <span>
-                                                    <%= item.dose %>
+                                                    ml
                                                 </span>
                                             </div>
                                             <p class="poso">
-                                                <%= item.dosage %>
+                                                8/8h
                                             </p>
-                                            <% } %>
-                                                <% if(item.routine !=='' ) { %>
+                                            
+                                                
+                                                        
+                                </td>
+                                
+                                <td>
+                                    
+                                        
+                                                
                                                     <div class="routine">
                                                         <p>
-                                                            <%= item.routine %>
+                                                            Café
                                                         </p>
-                                                        <img src="<%= item.imgRou %>" class="img-routine" alt="Rotina">
+                                                        <img src="https://www.flaticon.com/br/premium-icon/icons/svg/3086/3086646.svg" class="img-routine" alt="Rotina">
                                                         <p>
-                                                            <%= item.observation %>
+                                                            Tomar Café
                                                         </p>
                                                     </div>
-                                                    <% } %>
-                                                        <% } %>
+                                                    
+                                                        
                                 </td>
-                                <% }) %>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
                         </tr>
                     </tbody>
                 </table>
@@ -628,43 +922,138 @@
 
                     <tbody>
                         <tr>
-                            <% record.days.friday.forEach(item=> { %>
+                            
                                 <td>
-                                    <% if(item.active) { %>
-                                        <% if(item.medicine !=='' ) { %>
+                                    
+                                        
                                             <p class="name-med">
-                                                <%= item.medicine %>
+                                                Novalgina
                                             </p>
                                             <div class="medicine">
                                                 <span>
-                                                    <%= item.amount %>x
+                                                    2x
                                                 </span>
-                                                <img src="<%= item.imgMed %>" alt="Remédio" class="img-medicine">
+                                                <img src="https://www.flaticon.com/premium-icon/icons/svg/716/716654.svg" alt="Remédio" class="img-medicine">
                                                 <span>
-                                                    <%= item.amount_dose %>
+                                                    20
                                                 </span>
                                                 <span>
-                                                    <%= item.dose %>
+                                                    ml
                                                 </span>
                                             </div>
                                             <p class="poso">
-                                                <%= item.dosage %>
+                                                8/8h
                                             </p>
-                                            <% } %>
-                                                <% if(item.routine !=='' ) { %>
+                                            
+                                                
+                                                        
+                                </td>
+                                
+                                <td>
+                                    
+                                        
+                                                
                                                     <div class="routine">
                                                         <p>
-                                                            <%= item.routine %>
+                                                            Café
                                                         </p>
-                                                        <img src="<%= item.imgRou %>" class="img-routine" alt="Rotina">
+                                                        <img src="https://www.flaticon.com/br/premium-icon/icons/svg/3086/3086646.svg" class="img-routine" alt="Rotina">
                                                         <p>
-                                                            <%= item.observation %>
+                                                            Tomar Café
                                                         </p>
                                                     </div>
-                                                    <% } %>
-                                                        <% } %>
+                                                    
+                                                        
                                 </td>
-                                <% }) %>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
                         </tr>
                     </tbody>
                 </table>
@@ -714,43 +1103,138 @@
 
                     <tbody>
                         <tr>
-                            <% record.days.saturday.forEach(item=> { %>
+                            
                                 <td>
-                                    <% if(item.active) { %>
-                                        <% if(item.medicine !=='' ) { %>
+                                    
+                                        
                                             <p class="name-med">
-                                                <%= item.medicine %>
+                                                Novalgina
                                             </p>
                                             <div class="medicine">
                                                 <span>
-                                                    <%= item.amount %>x
+                                                    2x
                                                 </span>
-                                                <img src="<%= item.imgMed %>" alt="Remédio" class="img-medicine">
+                                                <img src="https://www.flaticon.com/premium-icon/icons/svg/716/716654.svg" alt="Remédio" class="img-medicine">
                                                 <span>
-                                                    <%= item.amount_dose %>
+                                                    20
                                                 </span>
                                                 <span>
-                                                    <%= item.dose %>
+                                                    ml
                                                 </span>
                                             </div>
                                             <p class="poso">
-                                                <%= item.dosage %>
+                                                8/8h
                                             </p>
-                                            <% } %>
-                                                <% if(item.routine !=='' ) { %>
+                                            
+                                                
+                                                        
+                                </td>
+                                
+                                <td>
+                                    
+                                        
+                                                
                                                     <div class="routine">
                                                         <p>
-                                                            <%= item.routine %>
+                                                            Café
                                                         </p>
-                                                        <img src="<%= item.imgRou %>" class="img-routine" alt="Rotina">
+                                                        <img src="https://www.flaticon.com/br/premium-icon/icons/svg/3086/3086646.svg" class="img-routine" alt="Rotina">
                                                         <p>
-                                                            <%= item.observation %>
+                                                            Tomar Café
                                                         </p>
                                                     </div>
-                                                    <% } %>
-                                                        <% } %>
+                                                    
+                                                        
                                 </td>
-                                <% }) %>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
                         </tr>
                     </tbody>
                 </table>
@@ -800,46 +1284,141 @@
 
                     <tbody>
                         <tr>
-                            <% record.days.sunday.forEach(item=> { %>
+                            
                                 <td>
-                                    <% if(item.active) { %>
-                                        <% if(item.medicine !=='' ) { %>
+                                    
+                                        
                                             <p class="name-med">
-                                                <%= item.medicine %>
+                                                Novalgina
                                             </p>
                                             <div class="medicine">
                                                 <span>
-                                                    <%= item.amount %>x
+                                                    2x
                                                 </span>
-                                                <img src="<%= item.imgMed %>" alt="Remédio" class="img-medicine">
+                                                <img src="https://www.flaticon.com/premium-icon/icons/svg/716/716654.svg" alt="Remédio" class="img-medicine">
                                                 <span>
-                                                    <%= item.amount_dose %>
+                                                    20
                                                 </span>
                                                 <span>
-                                                    <%= item.dose %>
+                                                    ml
                                                 </span>
                                             </div>
                                             <p class="poso">
-                                                <%= item.dosage %>
+                                                8/8h
                                             </p>
-                                            <% } %>
-                                                <% if(item.routine !=='' ) { %>
+                                            
+                                                
+                                                        
+                                </td>
+                                
+                                <td>
+                                    
+                                        
+                                                
                                                     <div class="routine">
                                                         <p>
-                                                            <%= item.routine %>
+                                                            Café
                                                         </p>
-                                                        <img src="<%= item.imgRou %>" class="img-routine" alt="Rotina">
+                                                        <img src="https://www.flaticon.com/br/premium-icon/icons/svg/3086/3086646.svg" class="img-routine" alt="Rotina">
                                                         <p>
-                                                            <%= item.observation %>
+                                                            Tomar Café
                                                         </p>
                                                     </div>
-                                                    <% } %>
-                                                        <% } %>
+                                                    
+                                                        
                                 </td>
-                                <% }) %>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>
+                                    
+                                </td>
+                                
                         </tr>
                     </tbody>
                 </table>
             </div>
-            <% } %>
+            
 </body>

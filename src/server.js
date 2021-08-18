@@ -16,8 +16,9 @@ routes.post('/pdf', (req, res) => {
 
     const data = req.body;
     const record = JSON.parse(data.json);
+    const all = data.all;
     
-    ejs.renderFile(path.resolve(__dirname, 'template.ejs'), {record}, (err, html) => {
+    ejs.renderFile(path.resolve(__dirname, 'template.ejs'), {record, all}, (err, html) => {
         //console.log(html);
         fs.writeFileSync(path.resolve(__dirname, 'html', `${record.id}.html`), html);
     });
@@ -50,11 +51,12 @@ routes.get('/get_pdf', async (req, res) => {
     const pdf = await page.pdf({
         printBackground: true,
         format: 'a2',
+        landscape: true,
         margin: {
-            top: '20px',
-            bottom: '40px',
-            left: '5px',
-            right: '5px'
+            top: '0px',
+            bottom: '0px',
+            left: '0px',
+            right: '0px'
         }
     });
 

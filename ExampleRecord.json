@@ -1,9 +1,9 @@
 {
     "id": 1,
     "pacient": {
-        "name": "",
+        "name": "Lucas de Freitas",
         "CPF": "",
-        "age": "",
+        "age": "25",
         "fromTo": "",
         "degree": "",
         "career": "",
