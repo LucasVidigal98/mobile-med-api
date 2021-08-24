@@ -4,12 +4,34 @@ const express = require('express');
 const cors = require('cors');
 const puppeteer = require('puppeteer');
 const path = require('path');
+const multer = require('multer');
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, path.resolve(__dirname, 'uploads'));
+    },
+    filename: function (req, file, cb) {
+        cb(null, file.originalname);
+    }
+});
+
+const upload = multer({ storage: storage });
 
 const app = express();
 const routes = express.Router();
 app.use(cors());
 app.use(express.json());
 app.use(routes);
+
+function updateImagePaths(record) {
+    const days = ['all', 'moonday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+
+    for (let i = 0; i < days.length; i++) {
+        for(let j = 0; j < record.days[i].imgMed.length; j++) { 
+            
+        }
+    }
+}
 
 routes.post('/pdf', (req, res) => {
 
@@ -66,5 +88,10 @@ routes.get('/get_pdf', async (req, res) => {
     return res.send(pdf);
 });
 
+routes.post('/upload_image', upload.any('images'), async (req, res) => {
+    res.json({success: true});
+});
+
 app.use('/uploads', express.static(path.resolve(__dirname, 'assets', 'icons')));
+app.use('/user_uploads', express.static(path.resolve(__dirname, 'uploads')));
 app.listen(process.env.PORT || 3333);
