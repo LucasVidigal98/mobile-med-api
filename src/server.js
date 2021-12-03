@@ -65,7 +65,7 @@ routes.get('/get_pdf', async (req, res) => {
     
     const page = await browser.newPage();
     //https://mobile-med-api.herokuapp.com
-    await page.goto(`http://localhost:3333/?id=${id}`, {
+    await page.goto(`https://mobile-med-api.herokuapp.com/?id=${id}`, {
         waitUntil: 'networkidle0'
     });
 
