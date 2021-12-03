@@ -65,7 +65,7 @@ routes.get('/get_pdf', async (req, res) => {
     
     const page = await browser.newPage();
     //https://mobile-med-api.herokuapp.com
-    await page.goto(`https://mobile-med-api.herokuapp.com/?id=${id}`, {
+    await page.goto(`http://localhost:3333/?id=${id}`, {
         waitUntil: 'networkidle0'
     });
 
@@ -84,6 +84,8 @@ routes.get('/get_pdf', async (req, res) => {
     await browser.close();
 
     res.contentType('application/pdf');
+
+    fs.unlinkSync(path.resolve(__dirname, 'html', `${id}.html`));
 
     return res.send(pdf);
 });
